@@ -1,0 +1,43 @@
+/* research.css */
+.ieee-wrap { max-width:860px; margin:0 auto; }
+.ieee-card { padding:2.8rem !important; border-color:rgba(245,158,11,0.2) !important; }
+.ieee-card::after {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--blue),var(--violet));
+  border-radius:20px 20px 0 0;
+  pointer-events: none;
+}
+.ieee-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.ieee-badge {
+  padding:0.5rem 1.1rem; background:rgba(245,158,11,0.12);
+  border:1px solid rgba(245,158,11,0.3); border-radius:8px;
+  font-family:'Space Mono',monospace; font-weight:700; font-size:0.85rem;
+  color:var(--amber); letter-spacing:2px;
+}
+.ieee-meta { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.ieee-year  { font-size:0.65rem; color:var(--dim); letter-spacing:2px; }
+.ieee-title {
+  font-size:1.7rem; font-weight:700; line-height:1.25;
+  letter-spacing:-0.5px; margin-bottom:0.5rem;
+}
+.ieee-author { font-size:0.8rem; color:var(--teal); margin-bottom:1.5rem; }
+.ieee-abstract {
+  font-size:0.85rem; color:var(--muted); line-height:1.9;
+  border-left:2px solid rgba(245,158,11,0.3); padding-left:1.4rem;
+  margin-bottom:1.8rem;
+}
+.ieee-details { display:flex; flex-direction:column; gap:0.55rem; }
+.idet-row    { display:flex; gap:1.5rem; font-size:0.78rem; }
+.idet-k      { color:var(--dim); min-width:90px; letter-spacing:0.5px; }
+.idet-v      { color:var(--muted); }
+.idet-link   { color:var(--blue); text-decoration:none; }
+.idet-link:hover { color:var(--text); }
+.ieee-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+
+/* Method + future */
+.method-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; }
+.method-card { cursor:default; }
+.future-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.2rem; margin-top:1.5rem; }
+.future-item { cursor:default; padding:1.6rem !important; }
+
+@media(max-width:600px){ .ieee-card { padding:1.8rem !important; } .ieee-title { font-size:1.3rem; } }

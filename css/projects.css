@@ -1,0 +1,20 @@
+/* projects.css */
+.filter-bar { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.5rem; }
+.f-btn {
+  padding:0.45rem 1.2rem;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:100px; color:var(--muted);
+  font-family:'Space Grotesk',sans-serif; font-size:0.78rem; font-weight:500;
+  cursor:pointer; transition:all 0.25s;
+}
+.f-btn:hover, .f-btn.active {
+  background:rgba(79,142,247,0.1); border-color:rgba(79,142,247,0.4); color:var(--blue);
+}
+.proj-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.5rem;
+}
+.proj-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem; }
+.proj-year { font-size:0.62rem; color:var(--dim); letter-spacing:1.5px; }
+.proj-title { font-size:0.97rem; font-weight:600; line-height:1.4; margin-bottom:0.6rem; }
+.proj-desc  { font-size:0.78rem; color:var(--muted); line-height:1.78; }

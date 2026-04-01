@@ -1,0 +1,111 @@
+/* home.css */
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 9rem 5% 5rem;
+  position: relative; z-index: 10;
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  font-weight: 700; letter-spacing: -3px;
+  line-height: 1.0; margin-bottom: 1.8rem;
+  opacity: 0; animation: fadeDown 0.9s ease 0.4s forwards;
+}
+
+/* Typing row */
+.hero-typing {
+  height: 2rem; display: flex; align-items: center;
+  justify-content: center; gap: 0px;
+  font-size: 1.05rem; color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+#typingText { color: var(--teal); font-weight: 500; }
+.type-cursor {
+  color: var(--teal); margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-sub {
+  font-size: 1rem; color: var(--muted);
+  max-width: 600px; line-height: 1.85; margin: 0 auto 2.5rem;
+}
+
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero-socials {
+  display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; justify-content: center;
+}
+.social-pill {
+  color: var(--dim); text-decoration: none; font-size: 0.78rem;
+  transition: color 0.25s;
+}
+.social-pill:hover { color: var(--text); }
+.social-dot { width:3px; height:3px; border-radius:50%; background:var(--dim); }
+
+/* ===== SKILL CARDS ===== */
+.cards-row {
+  padding: 0 5% 5rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+  position: relative; z-index: 10;
+}
+.card-icon {
+  width: 50px; height: 50px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.2rem;
+}
+.icon-blue   { background: rgba(79,142,247,0.14); }
+.icon-violet { background: rgba(168,85,247,0.14); }
+.icon-teal   { background: rgba(45,212,191,0.14); }
+.icon-pink   { background: rgba(236,72,153,0.14); }
+.icon-amber  { background: rgba(245,158,11,0.14); }
+
+.card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; }
+.card-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.75; }
+
+/* ===== FEATURED PROJECTS ===== */
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.feat-card { cursor: default; }
+.feat-top {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 0.8rem;
+}
+.feat-year { font-size: 0.65rem; color: var(--dim); letter-spacing: 1px; }
+.feat-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; line-height: 1.4; }
+.feat-desc  { font-size: 0.8rem; color: var(--muted); line-height: 1.75; }
+
+/* ===== CERTS BAND ===== */
+.certs-band { text-align: center; }
+.cert-pills { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+.cert-pill {
+  padding: 0.5rem 1.2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; font-size: 0.78rem; color: var(--muted);
+  transition: all 0.25s;
+}
+.cert-pill:hover { border-color: rgba(79,142,247,0.4); color: var(--text); background: rgba(79,142,247,0.06); }
+
+/* Animations */
+@keyframes fadeDown { from{opacity:0;transform:translateY(-22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp   { from{opacity:0;transform:translateY(28px)}  to{opacity:1;transform:translateY(0)} }
+
+@media(max-width:900px){
+  .cards-row   { grid-template-columns: 1fr; padding: 0 1.4rem 4rem; }
+  .feat-grid   { grid-template-columns: 1fr; }
+  .hero h1     { letter-spacing: -1.5px; }
+  .hero-btns   { flex-direction: column; align-items: center; }
+}
